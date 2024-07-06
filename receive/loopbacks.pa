@@ -1,0 +1,12 @@
+load-module module-null-sink sink_name=vsink20mft8 sink_properties=device.description=20mFT8
+load-module module-null-sink sink_name=vsink17mft8 sink_properties=device.description=17mFT8
+load-module module-null-sink sink_name=vsink15mft8 sink_properties=device.description=15mFT8
+load-module module-null-sink sink_name=vsink12mft8 sink_properties=device.description=12mFT8
+load-module module-null-sink sink_name=vsink10mft8 sink_properties=device.description=10mFT8
+load-module module-null-sink sink_name=null sink_properties=device.scription=null
+load-module module-loopback source='vsink20mft8.monitor' sink=null
+load-module module-loopback source='vsink17mft8.monitor' sink=null
+load-module module-loopback source='vsink15mft8.monitor' sink=null
+load-module module-loopback source='vsink12mft8.monitor' sink=null
+load-module module-loopback source='vsink10mft8.monitor' sink=null
+

@@ -1,0 +1,772 @@
+options:
+  parameters:
+    author: Justin Giorgi AI6YM
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: '2024'
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: no_gui
+    hier_block_src_path: '.:'
+    id: multiband_ft8_receiver
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: MultiBand FT8 Receiver
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: amp_on
+  id: variable
+  parameters:
+    comment: ''
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1104, 12.0]
+    rotation: 0
+    state: true
+- name: band_10m_center
+  id: variable
+  parameters:
+    comment: ''
+    value: '28200000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [312, 12.0]
+    rotation: 0
+    state: true
+- name: band_12m_center
+  id: variable
+  parameters:
+    comment: ''
+    value: '24800000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [448, 12.0]
+    rotation: 0
+    state: true
+- name: band_15m_center
+  id: variable
+  parameters:
+    comment: ''
+    value: '21200000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [584, 12.0]
+    rotation: 0
+    state: true
+- name: band_17m_center
+  id: variable
+  parameters:
+    comment: ''
+    value: '18060000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [720, 12.0]
+    rotation: 0
+    state: true
+- name: band_20m_center
+  id: variable
+  parameters:
+    comment: ''
+    value: '14200000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [856, 12.0]
+    rotation: 0
+    state: true
+- name: band_samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '400000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 140.0]
+    rotation: 0
+    state: true
+- name: ft8_10m
+  id: variable
+  parameters:
+    comment: ''
+    value: '28074000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [312, 76.0]
+    rotation: 0
+    state: true
+- name: ft8_12m
+  id: variable
+  parameters:
+    comment: ''
+    value: '24915000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [448, 76.0]
+    rotation: 0
+    state: true
+- name: ft8_15m
+  id: variable
+  parameters:
+    comment: ''
+    value: '21074000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [584, 76.0]
+    rotation: 0
+    state: true
+- name: ft8_17m
+  id: variable
+  parameters:
+    comment: ''
+    value: '18100000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [720, 76.0]
+    rotation: 0
+    state: true
+- name: ft8_20m
+  id: variable
+  parameters:
+    comment: ''
+    value: '14074000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [992, 12.0]
+    rotation: 0
+    state: true
+- name: if_gain
+  id: variable
+  parameters:
+    comment: ''
+    value: '40'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1192, 76.0]
+    rotation: 0
+    state: true
+- name: sdr_center_freq
+  id: variable
+  parameters:
+    comment: ''
+    value: '20000000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 12]
+    rotation: 0
+    state: enabled
+- name: sdr_samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '20000000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 76.0]
+    rotation: 0
+    state: true
+- name: vga_gain
+  id: variable
+  parameters:
+    comment: ''
+    value: '32'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1104, 76.0]
+    rotation: 0
+    state: true
+- name: volume
+  id: variable
+  parameters:
+    comment: ''
+    value: '7'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1192, 12.0]
+    rotation: 0
+    state: true
+- name: audio_sink_0
+  id: audio_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    device_name: pulse:vsink10mft8
+    num_inputs: '1'
+    ok_to_block: 'True'
+    samp_rate: '48000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1240, 236.0]
+    rotation: 0
+    state: enabled
+- name: audio_sink_0_0
+  id: audio_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    device_name: pulse:vsink12mft8
+    num_inputs: '1'
+    ok_to_block: 'True'
+    samp_rate: '48000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1240, 364.0]
+    rotation: 0
+    state: enabled
+- name: audio_sink_0_1
+  id: audio_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    device_name: pulse:vsink15mft8
+    num_inputs: '1'
+    ok_to_block: 'True'
+    samp_rate: '48000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1240, 492.0]
+    rotation: 0
+    state: enabled
+- name: audio_sink_0_2
+  id: audio_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    device_name: pulse:vsink17mft8
+    num_inputs: '1'
+    ok_to_block: 'True'
+    samp_rate: '48000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1240, 620.0]
+    rotation: 0
+    state: enabled
+- name: audio_sink_0_3
+  id: audio_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    device_name: pulse:vsink20mft8
+    num_inputs: '1'
+    ok_to_block: 'True'
+    samp_rate: '48000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1240, 748.0]
+    rotation: 0
+    state: enabled
+- name: band_tune_decimate_0
+  id: band_tune_decimate
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    decimation: '50'
+    input_center_freq: sdr_center_freq
+    input_samp_rate: sdr_samp_rate
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    output_bw: band_samp_rate
+    output_center_freq: band_10m_center
+    transition_bw: band_samp_rate/8
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [296, 220.0]
+    rotation: 0
+    state: enabled
+- name: band_tune_decimate_0_0
+  id: band_tune_decimate
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    decimation: '50'
+    input_center_freq: sdr_center_freq
+    input_samp_rate: sdr_samp_rate
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    output_bw: band_samp_rate
+    output_center_freq: band_12m_center
+    transition_bw: band_samp_rate/8
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [296, 348.0]
+    rotation: 0
+    state: enabled
+- name: band_tune_decimate_0_0_0
+  id: band_tune_decimate
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    decimation: '50'
+    input_center_freq: sdr_center_freq
+    input_samp_rate: sdr_samp_rate
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    output_bw: band_samp_rate
+    output_center_freq: band_15m_center
+    transition_bw: band_samp_rate/8
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [296, 476.0]
+    rotation: 0
+    state: enabled
+- name: band_tune_decimate_0_0_0_0
+  id: band_tune_decimate
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    decimation: '50'
+    input_center_freq: sdr_center_freq
+    input_samp_rate: sdr_samp_rate
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    output_bw: band_samp_rate
+    output_center_freq: band_17m_center
+    transition_bw: band_samp_rate/8
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [296, 604.0]
+    rotation: 0
+    state: enabled
+- name: band_tune_decimate_0_0_0_0_0
+  id: band_tune_decimate
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    decimation: '50'
+    input_center_freq: sdr_center_freq
+    input_samp_rate: sdr_samp_rate
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    output_bw: band_samp_rate
+    output_center_freq: band_20m_center
+    transition_bw: band_samp_rate/8
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [296, 732.0]
+    rotation: 0
+    state: enabled
+- name: blocks_multiply_const_vxx_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: volume
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1040, 244.0]
+    rotation: 0
+    state: enabled
+- name: blocks_multiply_const_vxx_0_0
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: volume
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1040, 372.0]
+    rotation: 0
+    state: enabled
+- name: blocks_multiply_const_vxx_0_1
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: volume
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1040, 500.0]
+    rotation: 0
+    state: enabled
+- name: blocks_multiply_const_vxx_0_2
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: volume
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1040, 628.0]
+    rotation: 0
+    state: enabled
+- name: blocks_multiply_const_vxx_0_3
+  id: blocks_multiply_const_vxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: volume
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: float
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1040, 756.0]
+    rotation: 0
+    state: enabled
+- name: rational_resampler_xxx_0
+  id: rational_resampler_xxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    decim: '1'
+    fbw: '0'
+    interp: '6'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    taps: '[]'
+    type: fff
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [816, 220.0]
+    rotation: 0
+    state: enabled
+- name: rational_resampler_xxx_0_0
+  id: rational_resampler_xxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    decim: '1'
+    fbw: '0'
+    interp: '6'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    taps: '[]'
+    type: fff
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [816, 348.0]
+    rotation: 0
+    state: enabled
+- name: rational_resampler_xxx_0_1
+  id: rational_resampler_xxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    decim: '1'
+    fbw: '0'
+    interp: '6'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    taps: '[]'
+    type: fff
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [816, 476.0]
+    rotation: 0
+    state: enabled
+- name: rational_resampler_xxx_0_2
+  id: rational_resampler_xxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    decim: '1'
+    fbw: '0'
+    interp: '6'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    taps: '[]'
+    type: fff
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [816, 604.0]
+    rotation: 0
+    state: enabled
+- name: rational_resampler_xxx_0_3
+  id: rational_resampler_xxx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    decim: '1'
+    fbw: '0'
+    interp: '6'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    taps: '[]'
+    type: fff
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [816, 732.0]
+    rotation: 0
+    state: enabled
+- name: soapy_hackrf_source_0
+  id: soapy_hackrf_source
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: amp_on
+    bandwidth: '20000000'
+    center_freq: sdr_center_freq
+    comment: ''
+    dev_args: ''
+    gain: if_gain
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: sdr_samp_rate
+    type: fc32
+    vga: vga_gain
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [48, 252.0]
+    rotation: 0
+    state: enabled
+- name: ssb_tune_demod_0
+  id: ssb_tune_demod
+  parameters:
+    affinity: ''
+    alias: ''
+    audio_bw: '3000'
+    comment: ''
+    input_center_freq: band_10m_center
+    input_samp_rate: band_samp_rate
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tuning_freq: ft8_10m
+    usb_lsb: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [560, 228.0]
+    rotation: 0
+    state: enabled
+- name: ssb_tune_demod_0_0
+  id: ssb_tune_demod
+  parameters:
+    affinity: ''
+    alias: ''
+    audio_bw: '3000'
+    comment: ''
+    input_center_freq: band_12m_center
+    input_samp_rate: band_samp_rate
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tuning_freq: ft8_12m
+    usb_lsb: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [560, 356.0]
+    rotation: 0
+    state: enabled
+- name: ssb_tune_demod_0_0_0
+  id: ssb_tune_demod
+  parameters:
+    affinity: ''
+    alias: ''
+    audio_bw: '3000'
+    comment: ''
+    input_center_freq: band_15m_center
+    input_samp_rate: band_samp_rate
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tuning_freq: ft8_15m
+    usb_lsb: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [560, 484.0]
+    rotation: 0
+    state: enabled
+- name: ssb_tune_demod_0_0_0_0
+  id: ssb_tune_demod
+  parameters:
+    affinity: ''
+    alias: ''
+    audio_bw: '3000'
+    comment: ''
+    input_center_freq: band_17m_center
+    input_samp_rate: band_samp_rate
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tuning_freq: ft8_17m
+    usb_lsb: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [560, 612.0]
+    rotation: 0
+    state: enabled
+- name: ssb_tune_demod_0_0_0_0_0
+  id: ssb_tune_demod
+  parameters:
+    affinity: ''
+    alias: ''
+    audio_bw: '3000'
+    comment: ''
+    input_center_freq: band_20m_center
+    input_samp_rate: band_samp_rate
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tuning_freq: ft8_20m
+    usb_lsb: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [560, 740.0]
+    rotation: 0
+    state: enabled
+
+connections:
+- [band_tune_decimate_0, '0', ssb_tune_demod_0, '0']
+- [band_tune_decimate_0_0, '0', ssb_tune_demod_0_0, '0']
+- [band_tune_decimate_0_0_0, '0', ssb_tune_demod_0_0_0, '0']
+- [band_tune_decimate_0_0_0_0, '0', ssb_tune_demod_0_0_0_0, '0']
+- [band_tune_decimate_0_0_0_0_0, '0', ssb_tune_demod_0_0_0_0_0, '0']
+- [blocks_multiply_const_vxx_0, '0', audio_sink_0, '0']
+- [blocks_multiply_const_vxx_0_0, '0', audio_sink_0_0, '0']
+- [blocks_multiply_const_vxx_0_1, '0', audio_sink_0_1, '0']
+- [blocks_multiply_const_vxx_0_2, '0', audio_sink_0_2, '0']
+- [blocks_multiply_const_vxx_0_3, '0', audio_sink_0_3, '0']
+- [rational_resampler_xxx_0, '0', blocks_multiply_const_vxx_0, '0']
+- [rational_resampler_xxx_0_0, '0', blocks_multiply_const_vxx_0_0, '0']
+- [rational_resampler_xxx_0_1, '0', blocks_multiply_const_vxx_0_1, '0']
+- [rational_resampler_xxx_0_2, '0', blocks_multiply_const_vxx_0_2, '0']
+- [rational_resampler_xxx_0_3, '0', blocks_multiply_const_vxx_0_3, '0']
+- [soapy_hackrf_source_0, '0', band_tune_decimate_0, '0']
+- [soapy_hackrf_source_0, '0', band_tune_decimate_0_0, '0']
+- [soapy_hackrf_source_0, '0', band_tune_decimate_0_0_0, '0']
+- [soapy_hackrf_source_0, '0', band_tune_decimate_0_0_0_0, '0']
+- [soapy_hackrf_source_0, '0', band_tune_decimate_0_0_0_0_0, '0']
+- [ssb_tune_demod_0, '0', rational_resampler_xxx_0, '0']
+- [ssb_tune_demod_0_0, '0', rational_resampler_xxx_0_0, '0']
+- [ssb_tune_demod_0_0_0, '0', rational_resampler_xxx_0_1, '0']
+- [ssb_tune_demod_0_0_0_0, '0', rational_resampler_xxx_0_2, '0']
+- [ssb_tune_demod_0_0_0_0_0, '0', rational_resampler_xxx_0_3, '0']
+
+metadata:
+  file_format: 1
